@@ -16,7 +16,6 @@
   box-sizing: border-box;
 }
 
-/* Content Container (Two-column layout) */
 .section-content {
   display: flex;
   width: 100%;
@@ -53,7 +52,7 @@
 }
 
 .right-panel:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05); 
 }
 
 .right-panel h2 {
@@ -137,7 +136,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6); /* Darkened background */
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +154,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 10001; /* Ensure content is above background */
+  z-index: 10001; 
 }
 
 .chatbot-content h2 {
@@ -203,10 +202,10 @@
   right: 10px;
   font-size: 30px;
   background: none;
-  color: #ff3b30; /* Red color */
+  color: #ff3b30; 
   border: none;
   cursor: pointer;
-  z-index: 10002; /* Ensure the button is above other elements */
+  z-index: 10002; 
   font-family: sans-serif;
   line-height: 1;
 }
@@ -276,7 +275,6 @@
 .logo-back {
   transform: rotateY(180deg);
 }
-/* Footer Style */
 .footer {
   position: fixed;
   bottom: 0;

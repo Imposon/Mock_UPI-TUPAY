@@ -38,10 +38,10 @@ const PhoneRecharge = ({ currentBalance, setCurrentBalance, setTransactionHistor
   src={logo}
   alt="Logo"
   style={{
-    width: '220px',        // Adjust width as needed
-    height: 'auto',       // Maintain aspect ratio
+    width: '220px',        
+    height: 'auto',       
     marginBottom: '20px',
-    borderRadius: '10px'  // Optional: soften edges
+    borderRadius: '10px' 
   }}
 />
       <h2>Phone Recharge</h2>

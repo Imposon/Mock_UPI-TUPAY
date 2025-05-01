@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useClerk } from '@clerk/clerk-react'; // Import Clerk's `useClerk` hook
-import './Sidebar.css'; // Add styles for the sidebar
+import { useClerk } from '@clerk/clerk-react';
+import './Sidebar.css';
 
 const Sidebar = ({ isOpen, closeSidebar }) => {
-  const { signOut } = useClerk(); // Get the signOut function from Clerk
+  const { signOut } = useClerk(); 
 
   const handleLogout = () => {
     signOut();
-    closeSidebar(); // Close the sidebar when logout occurs
+    closeSidebar(); 
   };
 
   return (
@@ -39,7 +39,6 @@ const Sidebar = ({ isOpen, closeSidebar }) => {
         <li>
           <Link to="/qr">QR Scanner</Link>
         </li>
-        {/* Add the Logout Button */}
         <li>
           <button className="logout-btn" onClick={handleLogout}>
             Logout

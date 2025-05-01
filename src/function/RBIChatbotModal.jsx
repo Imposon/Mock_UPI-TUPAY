@@ -6,8 +6,7 @@ const RBIChatbotModal = ({ onClose }) => {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // 🛑 Do NOT expose this in public repositories
-  const OPENROUTER_API_KEY = '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'; // Replace with your key
+  const OPENROUTER_API_KEY = 'sk-or-v1-bbd8432990ac2b6e4a91a68a53c716c92f7a5a6c3f7a91cfb1e8d329ccd7ghgif0'; // Replace with your key
 
   const fetchAnswerFromOpenRouter = async (userInput) => {
     setLoading(true);

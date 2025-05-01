@@ -69,7 +69,6 @@ const Bank = ({ currentBalance, setCurrentBalance, setTransactionHistory }) => {
 
         <button type="button" onClick={handlePayment}>Confirm Payment</button>
 
-        {/* Success message under button */}
         {showPopup && (
           <div className="success-message">
             <h3>Payment Successful!</h3>

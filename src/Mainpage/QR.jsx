@@ -15,7 +15,6 @@ const QR = () => {
     const handleScanSuccess = (result) => {
       console.log('QR Code Scanned:', result);
       scanner.clear().then(() => {
-        // ✅ Always redirect to this URL regardless of the scanned content
         window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       });
     };

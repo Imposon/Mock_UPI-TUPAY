@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { SignedIn, SignedOut, SignIn, SignUp, UserButton } from '@clerk/clerk-react';
-import Sidebar from './Sidebar';  // Import the Sidebar component
+import Sidebar from './Sidebar';
 
 import Mainpage from './Mainpage/mainpage';
 import Bank from './function/bank/bank';
@@ -15,7 +15,7 @@ import QR from './Mainpage/qr';
 const App = () => {
   const [currentBalance, setCurrentBalance] = useState(50000);
   const [transactionHistory, setTransactionHistory] = useState([]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State for sidebar visibility
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -33,16 +33,14 @@ const App = () => {
         </Routes>
       </SignedOut>
 
-      {/* Protected Routes */}
       <SignedIn>
-        {/* Hamburger Menu Icon */}
         <div
           style={{
             position: 'absolute',
             top: '20px',
             right: '20px',
             cursor: 'pointer',
-            zIndex: 1000,  // Ensure the hamburger icon is on top of everything else
+            zIndex: 1000, 
           }}
           onClick={toggleSidebar}
         >

@@ -2,7 +2,6 @@
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-  /* like mainpage */
   min-height: 100vh;
   color: #0d47a1;
   text-align: center;
@@ -63,7 +62,6 @@
   margin-top: 20px;
   padding: 15px;
   background-color: #d4edda;
-  /* light green */
   border: 1px solid #c3e6cb;
   border-radius: 8px;
   color: #155724;
