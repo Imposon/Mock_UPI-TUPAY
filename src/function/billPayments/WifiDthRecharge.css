@@ -1,4 +1,4 @@
-.phone-container {
+.dth-container {
     padding: 2rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
@@ -12,9 +12,15 @@
   }
   
   
-  .phone-container h2 {
+  .dth-container h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+  }
+  .dth-logo {
+    width: 260px;
+    height: auto;
+    margin-bottom: 1rem;
+    object-fit: contain;
   }
   
   .subtitle {
@@ -23,7 +29,7 @@
     margin-bottom: 2rem;
   }
   
-  .phone-form {
+  .dth-form {
     background: white;
     padding: 2rem;
     border-radius: 12px;
@@ -36,13 +42,13 @@
     gap: 1rem;
     align-items: center;
   }
-  .phone-form label {
+  .dth-form label {
     font-weight: bold;
     text-align: left;
     color: #1565c0;
   }
   
-  .phone-form input {
+  .dth-form input {
     padding: 0.8rem;
     border: 1px solid #eef1f3;
     border-radius: 8px;
@@ -51,7 +57,7 @@
     transition: border-color 0.3s ease;
   }
   
-  .phone-form input:focus {
+  .dth-form input:focus {
     border-color: #0d47a1;
   }
   

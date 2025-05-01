@@ -1,155 +1,295 @@
-/* mainpage.css */
+/* Main Page */
+.mainpage-wrapper {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+}
 
-.mainpage-container {
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-    min-height: 100vh;
-    color: #0d47a1;
-    transition: background 0.5s ease-in-out;
+.main-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Content Container (Two-column layout) */
+.section-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Left Panel */
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.credits-panel {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Right Panel */
+.right-panel {
+  flex: 1;
+  background-color: #ffffffcc;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.right-panel:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.right-panel h2 {
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
+.right-panel p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Option Boxes */
+.option-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.option-box:hover {
+  transform: translateY(-25px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.option-icon {
+  font-size: 2.5rem;
+  color: #0288d1;
+  margin-bottom: 1rem;
+}
+
+.option-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.option-box p {
+  font-size: 1rem;
+  color: #455a64;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
   }
-  
-  .main-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
+
+  .right-panel {
+    width: 100%;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+
+  .option-box {
+    width: 100%;
   }
-  
-  .main-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .main-header p {
-    font-size: 1.2rem;
-    color: #1565c0;
-  }
-  
-  .banking-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-  
-  .option-card {
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .option-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
-  
-  .option-icon {
-    font-size: 2.5rem;
-    color: #0288d1;
-    margin-bottom: 1rem;
-  }
-  
-  .option-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .option-card p {
-    font-size: 1rem;
-    color: #455a64;
-  }
-  
-  .credit-section {
-    margin-top: 4rem;
-    padding: 2rem;
-  }
-  
-  .credit-title {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    color: #0d47a1;
-  }
-  
-  .credit-options {
-    display: flex;
-    flex-wrap: wrap;
+
+  .credits-panel {
     justify-content: center;
-    gap: 2rem;
   }
-  
-  .credit-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .credit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .credit-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: #0288d1;
-  }
-  
-  .credit-card p {
-    font-size: 1rem;
-    color: #455a64;
-  }
-  
-  @media (max-width: 600px) {
-    .main-header h1 {
-      font-size: 2rem;
-    }
-  
-    .main-header p {
-      font-size: 1rem;
-    }
-  
-    .option-card h3,
-    .credit-card h3 {
-      font-size: 1.2rem;
-    }
-  
-    .option-card p,
-    .credit-card p {
-      font-size: 0.9rem;
-    }
-  }
-  
-  .footer {
-    text-align: center;
-    margin-top: 4rem;
-    color: #78909c;
-    font-size: 0.9rem;
-  }
-  .logo-image {
-    width: 300px;  /* Set a specific width */
-    height: 170px;  /* Set a specific height */
-    position: relative;
-    top: 20px;
-    left: 20px;
-    border-radius: 10px; /* Optional: to make corners rounded */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: contain;
-  }
-  
-  
-  
+}
+
+/* Logo Hover Effect */
+.main-logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.main-logo:hover {
+  transform: scale(1.5  ) rotate(360deg);
+  filter: brightness(1.2);
+}
+
+/* Chatbot Modal Styles */
+.chatbot-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Darkened background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.chatbot-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10001; /* Ensure content is above background */
+}
+
+.chatbot-content h2 {
+  margin: 0;
+  color: #1565c0;
+  text-align: center;
+}
+
+.chatbot-content input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.chatbot-content button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chatbot-content button:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.bot-response {
+  background-color: #f1f8e9;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  background: none;
+  color: #ff3b30; /* Red color */
+  border: none;
+  cursor: pointer;
+  z-index: 10002; /* Ensure the button is above other elements */
+  font-family: sans-serif;
+  line-height: 1;
+}
+.logo-flip-container {
+  width: 350px;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+.logo-hover-container {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin-top: 20px;
+}
+
+.logo-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.logo-hover-container:hover .logo-inner {
+  transform: rotateY(180deg) scale(1.1);
+}
+
+.logo-front,
+.logo-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  backface-visibility: hidden;
+  object-fit:cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo-back {
+  transform: rotateY(180deg);
+}
+/* Footer Style */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+}

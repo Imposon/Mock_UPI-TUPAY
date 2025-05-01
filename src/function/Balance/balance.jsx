@@ -2,15 +2,15 @@ import React from 'react';
 import './balance.css';
 
 const Balance = ({ currentBalance, transactionHistory }) => {
+  const sortedTransactions = [...transactionHistory].reverse();
+
   return (
     <div className="balance-container">
-      <header>
-        <h1>Your Balance</h1>
-        <h3>{currentBalance} points</h3>
-      </header>
+      <h2>Your Current Balance</h2>
+      <p className="balance-amount">{currentBalance} points</p>
 
       <div className="transaction-history">
-        <h2>Transaction History</h2>
+        <h3>Recent Transactions</h3>
         <table>
           <thead>
             <tr>
@@ -21,10 +21,12 @@ const Balance = ({ currentBalance, transactionHistory }) => {
             </tr>
           </thead>
           <tbody>
-            {transactionHistory.length === 0 ? (
-              <tr><td colSpan="4">No transactions yet</td></tr>
+            {sortedTransactions.length === 0 ? (
+              <tr>
+                <td colSpan="4" className="no-transactions">No transactions yet</td>
+              </tr>
             ) : (
-              transactionHistory.map((transaction, index) => (
+              sortedTransactions.map((transaction, index) => (
                 <tr key={index}>
                   <td>{transaction.date}</td>
                   <td>{transaction.type}</td>

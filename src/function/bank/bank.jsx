@@ -8,7 +8,7 @@ const Bank = ({ currentBalance, setCurrentBalance, setTransactionHistory }) => {
   const [ifscCode, setIfscCode] = useState('');
   const [error, setError] = useState('');
   const [showPopup, setShowPopup] = useState(false);
-  const [paymentAmount, setPaymentAmount] = useState(null);  // State to store the amount temporarily
+  const [paymentAmount, setPaymentAmount] = useState(null);
 
   const handlePayment = () => {
     if (!accountNumber || !ifscCode || !amount) {
@@ -21,23 +21,18 @@ const Bank = ({ currentBalance, setCurrentBalance, setTransactionHistory }) => {
       return;
     }
 
-    // Store the payment amount temporarily before clearing the inputs
     const newBalance = currentBalance - parseFloat(amount);
-    setPaymentAmount(amount);  // Set payment amount to be displayed in the popup
+    setPaymentAmount(amount);
 
-    // Update balance
     setCurrentBalance(newBalance);
 
-    // Update transaction history
     setTransactionHistory((prevHistory) => [
       ...prevHistory,
-      { type: 'Transfer', amount: `₹${amount}`, to: accountNumber, date: new Date().toLocaleString() }
+      { type: 'Bank Transfer', amount: `₹${amount}`, to: accountNumber, date: new Date().toLocaleString() }
     ]);
 
-    // Show popup for confirmation
     setShowPopup(true);
-
-    // Clear input fields after payment
+    setError('');
     setAmount('');
     setAccountNumber('');
     setIfscCode('');
@@ -71,20 +66,18 @@ const Bank = ({ currentBalance, setCurrentBalance, setTransactionHistory }) => {
           onChange={(e) => setAmount(e.target.value)}
         />
         {error && <p className="error-message">{error}</p>}
-        <button type="button" onClick={handlePayment}>Confirm Payment</button>
-      </form>
 
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
+        <button type="button" onClick={handlePayment}>Confirm Payment</button>
+
+        {/* Success message under button */}
+        {showPopup && (
+          <div className="success-message">
             <h3>Payment Successful!</h3>
             <p>₹{paymentAmount} has been deducted from your balance.</p>
             <button onClick={closePopup}>Close</button>
           </div>
-        </div>
-      )}
-
-
+        )}
+      </form>
     </div>
   );
 };
